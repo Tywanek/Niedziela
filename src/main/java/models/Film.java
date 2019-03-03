@@ -50,4 +50,13 @@ public class Film {
         this.rok = rok;
     }
 
+    @Override
+    public String toString() {
+        return "Film{" +
+                "nazwa='" + nazwa + '\'' +
+                ", rezyser='" + rezyser + '\'' +
+                ", kraj='" + kraj + '\'' +
+                ", rok=" + rok +
+                '}';
+    }
 }

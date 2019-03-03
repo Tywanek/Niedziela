@@ -3,19 +3,21 @@ package dao;
 
 import models.Film;
 import models.Patient;
+import models.OnlineManager;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaoProvider implements DaoInterface{
+public class DaoProvider implements DaoInterface {
 
     private String data = "This is my data";
 
-    private List<Patient> generatePatientList(){
+    private List<Patient> generatePatientList() {
         ArrayList<Patient> lista = new ArrayList<>();
-        lista.add(new Patient("Roman","Kowalski",55));
-        lista.add(new Patient("Andrzej","Novak",44));
-        lista.add(new Patient("Janush","Pik",66));
+        lista.add(new Patient("Roman", "Kowalski", 55));
+        lista.add(new Patient("Andrzej", "Novak", 44));
+        lista.add(new Patient("Janush", "Pik", 66));
 
         return lista;
     }
@@ -28,19 +30,25 @@ public class DaoProvider implements DaoInterface{
 
     @Override
     public Patient[] getPatientArray() {
-        List<Patient> tempList = generatePatientList();
-        Patient[] array = new Patient[tempList.size()];
-        tempList.toArray(array);
-        return array;
-       // return  generatePatientList().toArray(new Patient[generatePatientList().size()]);
+        return generatePatientList().toArray(new Patient[generatePatientList().size()]);
     }
 
+    @Override
     public List<Film> getFilmList() {
-        return null;
+        List<Film> result = new ArrayList<>();
+        try {
+            result = OnlineManager.getMovieList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
+
 
     @Override
     public String getData() {
         return data;
     }
+
+
 }
