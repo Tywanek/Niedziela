@@ -13,6 +13,11 @@ public class FilmSelector implements FilmSelectorInterface {
     }
 
     @Override
+    public List<Film> getAllFilms() {
+        return this.films;
+    }
+
+    @Override
     public List<Film> getFilmListByName() {
         return null;
     }
