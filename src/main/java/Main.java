@@ -9,6 +9,7 @@ public class Main {
         FilmSelector filmSelector = new FilmSelector(new DaoProvider());
 
         System.out.println(Arrays.asList(filmSelector.getAllFilms()));
+        System.out.println(Arrays.asList(filmSelector.getFilmListByNameSort()));
 
     }
 }

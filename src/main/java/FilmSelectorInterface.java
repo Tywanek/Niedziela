@@ -4,7 +4,8 @@ import java.util.List;
 
 public interface FilmSelectorInterface {
     List<Film> getAllFilms();
-    List<Film> getFilmListByName();
+    List<Film> getFilmListByNameSort();
+    List<Film> getFilmListByNameStrim();
     List<Film> getFilmListByYear();
     List<Film> getFilmListByCountry(String countryName);
 }

@@ -2,6 +2,8 @@ import dao.DaoProvider;
 import models.Film;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class FilmSelector implements FilmSelectorInterface {
@@ -18,12 +20,20 @@ public class FilmSelector implements FilmSelectorInterface {
     }
 
     @Override
-    public List<Film> getFilmListByName() {
+    public List<Film> getFilmListByNameSort() {
+        Film[] filmArray = this.films.toArray(new Film[this.films.size()]);
+        Arrays.sort(filmArray, (o1, o2) -> o1.getNazwa().compareTo(o2.getNazwa()));
+        return Arrays.asList(filmArray);
+    }
+
+    @Override
+    public List<Film> getFilmListByNameStrim() {
         return null;
     }
 
     @Override
     public List<Film> getFilmListByYear() {
+
         return null;
     }
 
