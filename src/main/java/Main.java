@@ -8,8 +8,13 @@ public class Main {
 
         FilmSelector filmSelector = new FilmSelector(new DaoProvider());
 
-        System.out.println(Arrays.asList(filmSelector.getAllFilms()));
-        System.out.println(Arrays.asList(filmSelector.getFilmListByNameSort()));
+        PatientSelector patientSelector =  new PatientSelector(new DaoProvider());
+        System.out.println(Arrays.asList(patientSelector.getCustomSort()));
+
+//        System.out.println(Arrays.asList(filmSelector.getAllFilms()));
+//        System.out.println(Arrays.asList(filmSelector.getFilmListByNameSort()));
+//        System.out.println("######################################");
+//        System.out.println(Arrays.asList(filmSelector.getCustomFilter()));
 
     }
 }

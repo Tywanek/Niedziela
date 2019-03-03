@@ -16,7 +16,10 @@ public class DaoProvider implements DaoInterface {
     private List<Patient> generatePatientList() {
         ArrayList<Patient> lista = new ArrayList<>();
         lista.add(new Patient("Roman", "Kowalski", 55));
+        lista.add(new Patient("Roman", "Novak", 44));
         lista.add(new Patient("Andrzej", "Novak", 44));
+        lista.add(new Patient("Andrzej", "Novak", 45));
+        lista.add(new Patient("Andrzej", "Novak", 30));
         lista.add(new Patient("Janush", "Pik", 66));
 
         return lista;

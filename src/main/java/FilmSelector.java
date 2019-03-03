@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FilmSelector implements FilmSelectorInterface {
 
@@ -27,8 +28,12 @@ public class FilmSelector implements FilmSelectorInterface {
     }
 
     @Override
-    public List<Film> getFilmListByNameStrim() {
-        return null;
+    public List<Film> getFilmListByNameStream() {
+        List<Film> result = this.films
+                .stream()
+                .sorted((p1, p2) -> p1.getNazwa().compareTo(p2.getNazwa()))
+                .collect(Collectors.toList());
+        return result;
     }
 
     @Override

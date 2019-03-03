@@ -4,4 +4,5 @@ public interface PatientSelectorInterface {
 
     Patient[] getPatientsByName();
     Patient[] getPatientsByAge();
+    Patient[] getCustomSort();
 }

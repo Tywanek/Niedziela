@@ -1,4 +1,5 @@
 import dao.DaoProvider;
+import models.Film;
 import models.Patient;
 
 import java.util.Arrays;
@@ -21,6 +22,14 @@ public class PatientSelector implements PatientSelectorInterface {
     @Override
     public Patient[] getPatientsByAge() {
         Arrays.sort(patientList, (o1, o2) -> o1.getAge() - o2.getAge());
+        return patientList;
+    }
+
+    @Override
+    public Patient[] getCustomSort() {
+        Arrays.sort(patientList, Comparator.comparing(Patient::getName)
+                .thenComparing(Patient::getSurname)
+                .thenComparing(Patient::getAge));
         return patientList;
     }
 }
