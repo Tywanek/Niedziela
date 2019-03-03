@@ -8,8 +8,7 @@ public class PatientSelector implements PatientSelectorInterface {
 
     private Patient[] patientList;
 
-    public PatientSelector() {
-        DaoProvider daoProvider = new DaoProvider();
+    public PatientSelector(DaoProvider daoProvider) {
         this.patientList = daoProvider.getPatientArray();
     }
 

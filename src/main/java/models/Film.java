@@ -57,6 +57,6 @@ public class Film {
                 ", rezyser='" + rezyser + '\'' +
                 ", kraj='" + kraj + '\'' +
                 ", rok=" + rok +
-                '}';
+                '}'+"\n";
     }
 }
