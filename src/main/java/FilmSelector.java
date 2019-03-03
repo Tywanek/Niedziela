@@ -38,12 +38,19 @@ public class FilmSelector implements FilmSelectorInterface {
 
     @Override
     public List<Film> getFilmListByYear() {
-
-        return null;
+        List<Film> result = this.films
+                .stream()
+                .sorted((p1, p2) -> p1.getRok().compareTo(p2.getRok()))
+                .collect(Collectors.toList());
+        return result;
     }
 
     @Override
     public List<Film> getFilmListByCountry(String countryName) {
-        return null;
+        List<Film> result = this.films
+                .stream()
+                .filter(film -> film.getKraj().equals(countryName))
+                .collect(Collectors.toList());
+        return result;
     }
 }
